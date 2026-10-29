@@ -2,9 +2,33 @@ const canvas = document.querySelector("#scene");
 const scene = document.querySelector("#scene-wrap");
 const context = canvas?.getContext("2d");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const themeToggle = document.querySelector("#theme-toggle");
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+let savedTheme = null;
+try { savedTheme = localStorage.getItem("portfolio-theme"); } catch {}
+
+function setTheme(theme, persist = false) {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  if (themeToggle) {
+    const label = isDark ? "Ativar modo claro" : "Ativar modo escuro";
+    themeToggle.setAttribute("aria-label", label);
+    themeToggle.setAttribute("title", label);
+    themeToggle.querySelector("span").textContent = isDark ? "☀" : "☾";
+  }
+  themeMeta?.setAttribute("content", isDark ? "#171914" : "#f3f0e8");
+  if (persist) {
+    try { localStorage.setItem("portfolio-theme", isDark ? "dark" : "light"); } catch {}
+  }
+}
+
+setTheme(savedTheme === "dark" ? "dark" : "light");
+themeToggle?.addEventListener("click", () => {
+  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
+});
 
 const revealTargets = document.querySelectorAll(
-  ".section-label, .about-content, .skills-heading, .skill-card, .project-intro, .project-card, .project-capabilities, .education-heading, .certificate, .contact-kicker, .contact-inner h2, .contact-cards",
+  ".section-label, .about-content, .skills-heading, .skill-card, .project-intro, .project-card, .project-capabilities, .ongoing-card, .education-heading, .certificate, .contact-kicker, .contact-inner h2, .contact-cards",
 );
 const progressBar = document.createElement("div");
 progressBar.className = "scroll-progress";
