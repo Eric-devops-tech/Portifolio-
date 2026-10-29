@@ -23,7 +23,7 @@ html[data-theme="dark"] {
   --ink: #ecebe3;
   --muted: #b5b4ab;
   --line: #3a3c34;
-  --orange: #ff805b;
+  --orange: #00c8e6;
   --blue: #27342b;
   background: var(--paper);
 }

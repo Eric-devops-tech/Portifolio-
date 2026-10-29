@@ -1,0 +1,80 @@
+:root {
+  --paper: #ffffff;
+  --ink: #070b0f;
+  --muted: #52636b;
+  --line: #d6e5e9;
+  --orange: #007f98;
+  --blue: #e2faff;
+  --accent-strong: #00687c;
+}
+
+html[data-theme="dark"] {
+  --paper: #06090c;
+  --ink: #effcff;
+  --muted: #a5c0c8;
+  --line: #253b42;
+  --orange: #00c8e6;
+  --blue: #082128;
+  --accent-strong: #00a6c1;
+  background: var(--paper);
+}
+
+html, body { background-color: var(--paper); }
+.projects { background: #f2fbfd; }
+.ongoing { background: #f2fbfd; }
+.skill-card, .project-capabilities { background: #ffffff; }
+.project-cross, .contact-section .section-label span:first-child,
+.contact-inner h2 em, .contact-cards i, .github-link span,
+.footer-column > p, .footer-bottom .wordmark span { color: var(--orange); }
+.live-dot { background: var(--orange); box-shadow: 0 0 0 4px color-mix(in srgb, var(--orange) 14%, transparent); }
+.cv-download span, .cv-hero-button .download-icon { color: var(--orange); }
+.cv-hero-button:hover { background: var(--accent-strong); }
+.project-demo-link { color: var(--orange); }
+.project-demo-link:hover, .project-cta span:last-child,
+.quiet-link span, .header-contact span, .certificate i,
+.more-projects span { color: var(--orange); }
+.cv-hero-button .download-icon { color: #ffffff; }
+.footer-connect > p { color: #73e5f5; }
+.site-footer { background: #080d11; }
+.ongoing-status { color: #007f98; }
+.ongoing-status b { color: #007f98; }
+.status-dot { background: #00a9c7; box-shadow: 0 0 0 4px rgb(0 169 199 / 15%); }
+.ongoing-art { background: radial-gradient(circle at 50% 45%, #075568, #082b35 48%, #071116 100%); }
+.ongoing-art::before { background-image: linear-gradient(rgb(140 239 255 / 11%) 1px, transparent 1px), linear-gradient(90deg, rgb(140 239 255 / 11%) 1px, transparent 1px); }
+.ongoing-orbit { border-color: rgb(100 228 248 / 35%); }
+.orbit-two { border-color: rgb(100 228 248 / 25%); }
+.ongoing-core { color: #effcff; border-color: rgb(120 235 250 / 70%); background: radial-gradient(circle at 34% 30%, #08788f, #074352 65%, #062b35); box-shadow: 0 0 65px rgb(0 200 230 / 25%), inset 0 0 30px rgb(130 238 250 / 12%); }
+.ongoing-core span, .ongoing-art-note { color: #73e5f5; }
+
+html[data-theme="dark"] .projects,
+html[data-theme="dark"] .ongoing { background: #0b1216; }
+html[data-theme="dark"] .skill-card,
+html[data-theme="dark"] .project-capabilities { background: #10181c; }
+html[data-theme="dark"] .project-cross { color: var(--orange); }
+html[data-theme="dark"] .live-dot { background: var(--orange); box-shadow: 0 0 0 4px rgb(0 200 230 / 18%); }
+html[data-theme="dark"] .cv-hero-button:hover { background: var(--accent-strong); }
+html[data-theme="dark"] .pill-link:not(.cv-hero-button),
+html[data-theme="dark"] .cv-download { color: #061014; background: var(--orange); }
+html[data-theme="dark"] .pill-link:not(.cv-hero-button):hover,
+html[data-theme="dark"] .cv-download:hover { background: var(--accent-strong); }
+html[data-theme="dark"] .project-demo-link,
+html[data-theme="dark"] .contact-section .section-label span:first-child,
+html[data-theme="dark"] .contact-inner h2 em,
+html[data-theme="dark"] .contact-cards i,
+html[data-theme="dark"] .github-link span,
+html[data-theme="dark"] .footer-column > p,
+html[data-theme="dark"] .footer-bottom .wordmark span { color: var(--orange); }
+html[data-theme="dark"] .project-demo-link:hover { color: #74eaff; }
+html[data-theme="dark"] .site-footer { background: #080d11; }
+html[data-theme="dark"] .ongoing-status,
+html[data-theme="dark"] .ongoing-status b,
+html[data-theme="dark"] .my-contribution > span,
+html[data-theme="dark"] .reactio-flow { color: #79e5f4; }
+html[data-theme="dark"] .ongoing-core span,
+html[data-theme="dark"] .ongoing-art-note { color: #73e5f5; }
+html[data-theme="dark"] .theme-toggle { color: #81edff; border-color: #31505a; }
+html[data-theme="dark"] .theme-toggle:hover { color: #061014; background: #00c8e6; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}

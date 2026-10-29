@@ -16,7 +16,7 @@ function setTheme(theme, persist = false) {
     themeToggle.setAttribute("title", label);
     themeToggle.querySelector("span").textContent = isDark ? "☀" : "☾";
   }
-  themeMeta?.setAttribute("content", isDark ? "#171914" : "#f3f0e8");
+  themeMeta?.setAttribute("content", isDark ? "#06090c" : "#ffffff");
   if (persist) {
     try { localStorage.setItem("portfolio-theme", isDark ? "dark" : "light"); } catch {}
   }
@@ -174,7 +174,7 @@ if (canvas && scene && context) {
         context.lineTo(screen.x, screen.y);
       }
     }
-    context.strokeStyle = `rgba(72, 103, 84, ${opacity})`;
+    context.strokeStyle = `rgba(0, 200, 230, ${opacity})`;
     context.stroke();
   }
 
@@ -189,8 +189,8 @@ if (canvas && scene && context) {
 
     context.clearRect(0, 0, width, height);
     const glow = context.createRadialGradient(width * 0.5, height * 0.48, radius * 0.05, width * 0.5, height * 0.48, radius * 1.45);
-    glow.addColorStop(0, "rgba(239, 96, 59, 0.15)");
-    glow.addColorStop(1, "rgba(239, 96, 59, 0)");
+    glow.addColorStop(0, "rgba(0, 200, 230, 0.15)");
+    glow.addColorStop(1, "rgba(0, 200, 230, 0)");
     context.fillStyle = glow;
     context.fillRect(0, 0, width, height);
 
@@ -203,14 +203,14 @@ if (canvas && scene && context) {
       const dotSize = point.scale * (0.55 + frontLight * 1.1);
       context.beginPath();
       context.arc(point.x, point.y, dotSize, 0, Math.PI * 2);
-      context.fillStyle = `rgba(239, 96, 59, ${alpha})`;
+      context.fillStyle = `rgba(0, 200, 230, ${alpha})`;
       context.fill();
     }
 
     // A tilted orbit gives the sphere a second depth cue.
     context.beginPath();
     context.ellipse(width * 0.5, height * 0.48, radius * 1.38, radius * 0.43, -0.42 + rotation.y * 0.25, 0, Math.PI * 2);
-    context.strokeStyle = "rgba(239, 96, 59, 0.32)";
+    context.strokeStyle = "rgba(0, 200, 230, 0.32)";
     context.lineWidth = 1;
     context.stroke();
 
@@ -219,7 +219,7 @@ if (canvas && scene && context) {
     const markerY = height * 0.48 + Math.sin(markerAngle) * radius * 0.43;
     context.beginPath();
     context.arc(markerX, markerY, 3.2, 0, Math.PI * 2);
-    context.fillStyle = "#ef603b";
+    context.fillStyle = "#00c8e6";
     context.fill();
   }
 
