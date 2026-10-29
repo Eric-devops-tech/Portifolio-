@@ -8,12 +8,13 @@
   <title>Eric Maciel — tecnologia com intenção</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="profile.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <header class="header shell">
     <a class="wordmark" href="#inicio">EM<span>®</span></a>
-    <nav aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#formacao">Formação</a></nav>
+    <nav aria-label="Navegação principal"><a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#habilidades">Habilidades</a><a href="#formacao">Formação</a></nav>
     <a class="header-contact" href="#contato">Contato <span>↗</span></a>
   </header>
 
@@ -35,22 +36,35 @@
 
     <section class="about section shell" id="sobre">
       <div class="section-label"><span>01</span><span>UM POUCO SOBRE MIM</span></div>
-      <div class="about-content"><h2>Aprender fazendo.<br><span>Melhorar sempre.</span></h2><div class="about-copy"><p>Estou construindo minha trajetória na tecnologia com as mãos no código e a cabeça cheia de perguntas. Gosto de entender como as coisas funcionam, testar caminhos e transformar desafios em aprendizado prático.</p><p>Meu foco está em DevOps, infraestrutura e automação — áreas onde colaboração e melhoria contínua fazem a diferença.</p><div class="skill-list"><span>DevOps</span><span>Cloud</span><span>Automação</span><span>Infraestrutura</span></div></div></div>
+      <div class="about-content"><h2>Aprender fazendo.<br><span>Melhorar sempre.</span></h2><div class="about-copy"><p>Olá! Sou Eric Maciel, estudante de Análise e Desenvolvimento de Sistemas na FIAP e desenvolvedor com foco em engenharia de dados e software, automação e computação em nuvem.</p><p>Minha trajetória tecnológica começou na TheLED, onde ingressei aos 17 anos em projetos especiais e fui efetivado para a equipe de suporte e sustentação técnica. Por dominar a operação do software dos sistemas, tornei-me ponto focal para a equipe interna e para técnicos em campo, resolvendo incidentes críticos e contribuindo para a estabilidade operacional.</p><p>Na FIAP, aprofundei minhas competências em desafios reais. Desenvolvemos uma plataforma para a ONG Turma do Bem, um dos sete projetos selecionados para apresentação institucional. Liderei a modelagem do banco de dados relacional em SQL; integramos IA generativa, criamos mapas de calor para apoiar decisões e implementamos geolocalização e triagem inteligente para conectar pacientes a dentistas voluntários.</p><p>Quero atuar em um ecossistema de alta escala e disponibilidade, onde a robustez dos dados e o pensamento crítico impactem milhões de usuários. Quero contribuir com dedicação, raciocínio analítico para resolução de problemas e capacidade de aprendizado rápido.</p></div></div>
+    </section>
+
+    <section class="skills section shell" id="habilidades">
+      <div class="section-label"><span>02</span><span>HABILIDADES TÉCNICAS</span></div>
+      <div class="skills-heading"><h2>Ferramentas para<br><span>tirar ideias do papel.</span></h2><p>Competências e tecnologias<br>do meu currículo.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card"><span>01 / DESENVOLVIMENTO</span><h3>Back-end & linguagens</h3><div class="skill-pills"><span>Java</span><span>C# / .NET</span><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>Spring Boot</span><span>Quarkus</span><span>Node.js</span><span>APIs RESTful</span></div></article>
+        <article class="skill-card"><span>02 / DADOS</span><h3>Engenharia de dados</h3><div class="skill-pills"><span>Oracle Database</span><span>Oracle SQL</span><span>MySQL</span><span>NoSQL</span><span>MongoDB</span><span>Modelagem relacional</span><span>ETL</span></div></article>
+        <article class="skill-card"><span>03 / OPERAÇÕES</span><h3>Cloud, DevOps & QA</h3><div class="skill-pills"><span>Azure</span><span>Docker</span><span>CI/CD</span><span>Cloud Computing</span><span>Compliance</span><span>Quality Assurance</span><span>Testes unitários</span><span>Testes de integração</span></div></article>
+        <article class="skill-card"><span>04 / PRODUTO</span><h3>Front-end, mobile & IA</h3><div class="skill-pills"><span>React 19</span><span>Tailwind CSS 4</span><span>Vite</span><span>HTML5 / CSS3</span><span>Mobile Application Development</span><span>IA generativa</span><span>IoT / IoB</span></div></article>
+        <article class="skill-card"><span>05 / ARQUITETURA</span><h3>Práticas & colaboração</h3><div class="skill-pills"><span>Clean Architecture</span><span>Domain-Driven Design</span><span>Git</span><span>GitHub</span><span>GitFlow</span><span>Scrum</span><span>Kanban</span></div></article>
+      </div>
     </section>
 
     <section class="projects section" id="projetos">
-      <div class="shell"><div class="section-label"><span>02</span><span>FEITO, TESTADO, APRENDIDO</span></div>
-        <div class="project-intro"><h2>Um projeto.<br><span>Muitas descobertas.</span></h2><p>Uma amostra do que tenho explorado até agora.</p></div>
+      <div class="shell"><div class="section-label"><span>03</span><span>FEITO, TESTADO, APRENDIDO</span></div>
+        <div class="project-intro"><h2>Um projeto.<br><span>Muitas descobertas.</span></h2><p>Plataforma de odontologia social para a rede Turma do Bem.</p></div>
         <article class="project-card">
-          <div class="project-art"><div class="project-grid"></div><div class="project-stamp">SPRINT<br><b>001</b></div><div class="project-orbit orbit-a"></div><div class="project-orbit orbit-b"></div><span class="project-cross cross-a">+</span><span class="project-cross cross-b">+</span><span class="art-footer">BUILD / LEARN / REPEAT</span></div>
-          <div class="project-details"><p class="eyebrow">PROJETO EM DESTAQUE · 2026</p><h3>Challenge Sprint</h3><p>Um projeto de desafios práticos que reúne funcionalidades e exercícios para colocar conhecimentos em ação. No repositório você encontra a documentação completa, o que foi desenvolvido e como explorar cada parte.</p><div class="project-tools"><span>PROJETO PRÁTICO</span><span>DOCUMENTADO NO GITHUB</span></div><a class="project-cta" href="https://github.com/Eric-devops-tech/Challenge-Sprint" target="_blank" rel="noreferrer"><span>Explorar repositório</span><span>↗</span></a></div>
+          <div class="project-art"><div class="project-grid"></div><div class="project-stamp">TURMA<br><b>+ BEM</b></div><div class="project-orbit orbit-a"></div><div class="project-orbit orbit-b"></div><span class="project-cross cross-a">+</span><span class="project-cross cross-b">+</span><span class="art-footer">CUIDADO / DADOS / CONEXÃO</span></div>
+          <div class="project-details"><p class="eyebrow">CHALLENGE FIAP × TURMA DO BEM · SPRINT 4</p><h3>Dentista na Nuvem</h3><p>A Turma do Bem é a maior rede de voluntariado odontológico do mundo. A plataforma conecta jovens em situação de vulnerabilidade social a dentistas voluntários. O Score TdB prioriza os casos mais graves e organiza o fluxo de triagem, adoção e atendimento.</p><div class="project-tools"><span>REACT · VITE · TYPESCRIPT</span><span>JAVA REST API · AZURE</span></div><a class="project-cta" href="https://github.com/Eric-devops-tech/Challenge-Sprint" target="_blank" rel="noreferrer"><span>Explorar repositório</span><span>↗</span></a></div>
         </article>
+        <div class="project-capabilities"><p class="capability-intro">O QUE A PLATAFORMA FAZ</p><ul><li><b>Perfis e acesso:</b> dashboards para admin, dentista e paciente com rotas protegidas por sessão e perfil.</li><li><b>Cadastro e triagem:</b> preenchimento de endereço via ViaCEP, validação de formulários e Score TdB para priorização clínica e social.</li><li><b>Mapa e atendimento:</b> mapa Leaflet com heatmap por cidade e cálculo de rota até o dentista voluntário.</li><li><b>Fluxos completos:</b> adoção e conclusão de atendimentos, acompanhamento de status e prontuário individual.</li><li><b>Gestão e acesso:</b> relatórios em PDF/CSV, modo escuro e layout responsivo para celular, tablet e desktop.</li></ul></div>
         <p class="more-projects">ESTE É SÓ O COMEÇO <span>✳</span> MAIS PROJETOS EM CONSTRUÇÃO</p>
       </div>
     </section>
 
     <section class="education section shell" id="formacao">
-      <div class="section-label"><span>03</span><span>APRENDER É PARTE DO TRABALHO</span></div>
+      <div class="section-label"><span>04</span><span>APRENDER É PARTE DO TRABALHO</span></div>
       <div class="education-heading"><h2>Estudo contínuo,<br><span>curiosidade ativa.</span></h2><p>Certificados de cursos FIAP<br>— confira cada um no link.</p></div>
       <div class="certificate-grid">
         <a class="certificate" href="https://on.fiap.com.br/local/nanocourses/gerar_certificado.php?chave=4bccad412908e7692d59aa54d7b2b90f&action=view" target="_blank" rel="noreferrer"><span>FIAP / 01</span><b>Formação Social e Sustentabilidade (80h)</b><i>↗</i></a>
@@ -62,7 +76,7 @@
       </div>
     </section>
 
-    <section class="contact-section" id="contato"><div class="shell contact-inner"><div class="section-label"><span>04</span><span>CONTATO DIRETO</span></div><p class="contact-kicker">TEM UMA IDEIA, UM PROJETO<br>OU UMA OPORTUNIDADE?</p><h2>Vamos<br><em>conversar.</em></h2><div class="contact-cards"><a href="mailto:ericmaciel151@gmail.com"><span>E-MAIL</span><b>ericmaciel151@gmail.com</b><i>↗</i></a><a href="tel:+5511913563847"><span>TELEFONE / WHATSAPP</span><b>+55 (11) 91356-3847</b><i>↗</i></a></div><a class="github-link" href="https://github.com/Eric-devops-tech" target="_blank" rel="noreferrer">GitHub <span>@Eric-devops-tech</span> ↗</a></div></section>
+    <section class="contact-section" id="contato"><div class="shell contact-inner"><div class="section-label"><span>05</span><span>CONTATO DIRETO</span></div><p class="contact-kicker">TEM UMA IDEIA, UM PROJETO<br>OU UMA OPORTUNIDADE?</p><h2>Vamos<br><em>conversar.</em></h2><div class="contact-cards"><a href="mailto:ericmaciel151@gmail.com"><span>E-MAIL</span><b>ericmaciel151@gmail.com</b><i>↗</i></a><a href="tel:+5511913563847"><span>TELEFONE / WHATSAPP</span><b>+55 (11) 91356-3847</b><i>↗</i></a></div><a class="github-link" href="https://github.com/Eric-devops-tech" target="_blank" rel="noreferrer">GitHub <span>@Eric-devops-tech</span> ↗</a></div></section>
   </main>
 
   <footer class="site-footer">
@@ -72,6 +86,7 @@
         <a href="#inicio"><span>→</span> Início</a>
         <a href="#sobre"><span>→</span> Sobre mim</a>
         <a href="#projetos"><span>→</span> Projetos</a>
+        <a href="#habilidades"><span>→</span> Habilidades</a>
         <a href="#formacao"><span>→</span> Formação</a>
         <a href="#contato"><span>→</span> Contato</a>
       </div>
