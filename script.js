@@ -3,6 +3,48 @@ const scene = document.querySelector("#scene-wrap");
 const context = canvas?.getContext("2d");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+const revealTargets = document.querySelectorAll(
+  ".section-label, .about-content, .skills-heading, .skill-card, .project-intro, .project-card, .project-capabilities, .education-heading, .certificate, .contact-kicker, .contact-inner h2, .contact-cards",
+);
+const progressBar = document.createElement("div");
+progressBar.className = "scroll-progress";
+progressBar.setAttribute("aria-hidden", "true");
+document.body.prepend(progressBar);
+
+revealTargets.forEach((element, index) => {
+  element.dataset.reveal = "";
+  if (element.matches(".skill-card, .certificate")) {
+    element.style.setProperty("--reveal-delay", `${(index % 3) * 70}ms`);
+  }
+});
+
+document.body.classList.add("motion-ready");
+if ("IntersectionObserver" in window && !reducedMotion.matches) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    }
+  }, { threshold: 0.12, rootMargin: "0px 0px -28px 0px" });
+  revealTargets.forEach((element) => revealObserver.observe(element));
+} else {
+  revealTargets.forEach((element) => element.classList.add("is-visible"));
+}
+
+let progressFrame = 0;
+function updateScrollProgress() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  progressBar.style.transform = `scaleX(${progress})`;
+  progressFrame = 0;
+}
+window.addEventListener("scroll", () => {
+  if (!progressFrame) progressFrame = window.requestAnimationFrame(updateScrollProgress);
+}, { passive: true });
+window.addEventListener("resize", updateScrollProgress, { passive: true });
+updateScrollProgress();
+
 if (canvas && scene && context) {
   const points = [];
   const latitudeCount = 15;
@@ -113,7 +155,7 @@ if (canvas && scene && context) {
   }
 
   function draw(time) {
-    animationFrame = window.requestAnimationFrame(draw);
+    if (!reducedMotion.matches) animationFrame = window.requestAnimationFrame(draw);
     const elapsed = previousTime ? Math.min(time - previousTime, 40) : 16;
     previousTime = time;
     const seconds = elapsed / 1000;
@@ -148,7 +190,7 @@ if (canvas && scene && context) {
     context.lineWidth = 1;
     context.stroke();
 
-    const markerAngle = time * 0.00045 + rotation.y;
+    const markerAngle = (reducedMotion.matches ? 0 : time * 0.00045) + rotation.y;
     const markerX = width * 0.5 + Math.cos(markerAngle) * radius * 1.38;
     const markerY = height * 0.48 + Math.sin(markerAngle) * radius * 0.43;
     context.beginPath();
@@ -185,8 +227,13 @@ if (canvas && scene && context) {
   });
   reducedMotion.addEventListener?.("change", () => {
     if (reducedMotion.matches) {
+      window.cancelAnimationFrame(animationFrame);
       rotation.y = 0.15;
       rotation.x = -0.18;
+      draw(performance.now());
+    } else {
+      previousTime = 0;
+      animationFrame = window.requestAnimationFrame(draw);
     }
   });
 
